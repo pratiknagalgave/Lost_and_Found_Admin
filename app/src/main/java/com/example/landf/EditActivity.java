@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 //import android.support.annotation.NonNull;
@@ -16,9 +17,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.ColorRes;
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.example.landf.Model.Listdata;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -70,8 +74,8 @@ Button updates,delete;
                 public void onClick(View v) {
 
 
-                    if(TempPass.trim().equals(password.getText().toString().trim()))
-                        UpdateNotes(id);
+                   // if(TempPass.trim().equals(password.getText().toString().trim()))
+                        UpdateItem(id);
 
                 }
             });
@@ -84,8 +88,8 @@ Button updates,delete;
                  String tempS = password.getText().toString();
 
 
-                 if(TempPass.trim().equals(password.getText().toString().trim()))
-                     deleteNote(id);
+               //  if(TempPass.trim().equals(password.getText().toString().trim()))
+                     deleteItem(id);
 
              }
          });
@@ -93,8 +97,10 @@ Button updates,delete;
 
      }
 
-    private void UpdateNotes(String id)
+    private void UpdateItem(String id)
     {
+
+        CardView cv = (CardView) findViewById(R.id.cv) ;
         titlesend=title.getText().toString();
         descsend=desc.getText().toString();
         passwordsend = password.getText().toString();
@@ -105,23 +111,37 @@ Button updates,delete;
 
 
         Listdata listdata = new Listdata(id,titlesend, descsend, postedtimesend, passwordsend, urlidtvsend );
-        mDatabase.child("Notes").child(id).setValue(listdata).
+        mDatabase.child("Item").child(id).setValue(listdata).
                 addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                Toast.makeText(EditActivity.this, "Notes Updated", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditActivity.this, "Item Updated", Toast.LENGTH_SHORT).show();
+                //cv.setCardBackgroundColor(Color.GRAY);
+
                 startActivity(new Intent(getApplicationContext(),HomeScreen.class));
+                //cv.setCardBackgroundColor(Color.GRAY);
+
+
             }
         });
 
     }
 
-    private void deleteNote(String id) {
+    private void deleteItem(String id) {
+        mDatabase.child("Item").child(id).removeValue()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(EditActivity.this,"Item Updated",Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),HomeScreen.class));
+
+                    }
+                });
         mDatabase.child("Notes").child(id).removeValue()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(EditActivity.this,"Note Updated",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditActivity.this,"Item Updated",Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(),HomeScreen.class));
 
                     }

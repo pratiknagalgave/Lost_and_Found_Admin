@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
+    android:id="@+id/cv"
     android:layout_margin="5dp"
     app:cardCornerRadius="10dp"
     app:cardBackgroundColor="@android:color/black"
@@ -9,9 +10,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
+        android:id="@+id/lly"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/approvedstatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Approved"
+            android:textColor="@color/green"
+            android:visibility="gone"/>
 
 
 

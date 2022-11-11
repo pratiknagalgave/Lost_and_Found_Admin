@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "285240271336",
-    "firebase_url": "https://landf-404ae-default-rtdb.firebaseio.com",
-    "project_id": "landf-404ae",
-    "storage_bucket": "landf-404ae.appspot.com"
+    "project_number": "75884647897",
+    "firebase_url": "https://lost-and-f-last-default-rtdb.firebaseio.com",
+    "project_id": "lost-and-f-last",
+    "storage_bucket": "lost-and-f-last.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:285240271336:android:05ef88c9a20315f90c445d",
+        "mobilesdk_app_id": "1:75884647897:android:d7d4e7d0159190113775c8",
         "android_client_info": {
           "package_name": "com.example.landf"
         }
       },
       "oauth_client": [
         {
-          "client_id": "285240271336-jq87lkii02hmioaqd7ugttqu6f280ep3.apps.googleusercontent.com",
+          "client_id": "75884647897-kgqb5p8b441g4sluvv58o284lqcvlpet.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBVfjNbrt15Bd4UOBtwEahcNnPRcmJPoNw"
+          "current_key": "AIzaSyABuSwOo3Z1-LQ7igltSzOwpIMMw0wA7zY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "285240271336-jq87lkii02hmioaqd7ugttqu6f280ep3.apps.googleusercontent.com",
+              "client_id": "75884647897-kgqb5p8b441g4sluvv58o284lqcvlpet.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

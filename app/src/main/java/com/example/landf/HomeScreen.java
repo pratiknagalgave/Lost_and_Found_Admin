@@ -61,6 +61,7 @@ public class HomeScreen extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
                 {
                     Listdata listdata=dataSnapshot1.getValue(Listdata.class);
+
                     list.add(listdata);
 
                 }
